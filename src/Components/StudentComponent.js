@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Nav from './Nav';
 import Header from './Header';
 import Chart from './Chart';
@@ -11,6 +11,10 @@ const StudentComponent = () => {
     const query = window.location.search;
     const urlParams = new URLSearchParams(query)
     const pageName = urlParams.get('name')
+
+    useEffect(() => {
+        document.title = `Winc Dashboard van ${pageName}`
+    })
 
     return (
         <div>

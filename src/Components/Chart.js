@@ -83,6 +83,16 @@ const Chart = ({ pagename }) => {
 
     const data = xyObject();
 
+    const getConditiontalLabel = () =>{
+        if (pagename){
+            return "Rating"
+        } else{
+            return "Gemiddelde rating van geselecteerde studenten"
+        }
+    }
+
+    const conditionalLabel = getConditiontalLabel()
+
     return (
         <div className = "chartcomponent">
             {filteredStudents.length > 0 && weighedAssignments.length > 0 &&
@@ -196,14 +206,14 @@ const Chart = ({ pagename }) => {
                         />}
                     />
                     <VictoryAxis dependentAxis
-                        label="rating"
+                        label= {conditionalLabel}
                         domain={[0, 5]}
                         style={{
                             tickLabels:
                                 { fontSize: 7 },
                             axisLabel:
                             {
-                                fontSize: 8,
+                                fontSize: 6,
                                 padding: 35
                             }
                         }} />

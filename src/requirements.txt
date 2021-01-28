@@ -1,0 +1,22 @@
+Basis:
+
+[x] homepage met overzicht in staafdiagram leuk/moeilijk per opdracht (gemiddelde alle studenten)
+[x] per student aparte Routing => Als gebruiker wil ik een lijst zien met de namen van studenten. 
+Als ik op een naam klik wil ik naar een pagina en daar een overzicht zien van de evaluatie van 
+de opdrachten in een staafdiagram
+[x] design: maak een design waar je trots op bent :)
+[x] Slicen en dicen, kies één optie:
+    [-] checkbox: alleen leuk of alleen moeilijk beoordeling meewegen
+    [x] niet alleen kunnen filteren op één persoon, maar ook op meerdere personen
+        checkboxes naast studenten die je kan aanvinken om een student te includeren in het gemiddelde
+    [-] lijndiagram
+    [x] mogelijkheid om per opdracht de beoordelingen te zien (lijst met checkboxes of dropdown menu)
+
+Bonus:
+
+[x] Meerdere opties van het Slicen en dicen
+[-] tabel overzicht
+[-] Gebruikersprofielen met Mockaroo
+[-] Alles opslaan en beheren in Redux
+[x] Sorteren van de bar-charts
+[-] Sorteren van de studenten

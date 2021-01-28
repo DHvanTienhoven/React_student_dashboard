@@ -1,38 +1,185 @@
-.App {
-  text-align: center;
+@font-face {
+    font-family: Noto;
+    src: url(NotoSans-Regular.ttf);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    background-color: #4f8bc9;
+    font-family: Noto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+    display: inline;
+    vertical-align: middle;
+    font-size: 50px;
+    font-weight: 900;
+    color: #4f8bc9;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+ul {
+    list-style: none;
+    padding-inline-start: 0;
 }
 
-.App-link {
-  color: #61dafb;
+img {
+    display: inline;
+    padding: 2em;
+    vertical-align: middle
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header {
+    height: 220px;
+    background-color: white;
+    text-align: center
+}
+
+.chartcomponent {
+    background-color: white;
+    width: 75vw;
+    min-height: 300px;
+    margin: 0 auto;
+    border: solid 4px #120faa;
+    border-radius: 20px;
+    text-align: center;
+    padding: 1em
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    background-color: #120faa;
+    padding: 0.5em;
+    border-radius: 10px;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.nav {
+    padding: 2em;
+    text-align: center;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    background-color: #120faa;
+    width: 10em;
+    color: white;
+    padding: 0.5em;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: Noto;
+    margin-top: 1.5em;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 10px;
+    left: -30px;
+    height: 25px;
+    width: 25px;
+    border-radius: 7px;
+    background-color: #eee;
+}
+
+.container:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+.container input:checked~.checkmark {
+    background-color: rgb(85, 177, 85);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container input:checked~.checkmark:after {
+    display: block;
+}
+
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.menu {
+    display: flex;
+    width: 75vw;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding-top: 2em;
+    padding-bottom: 3em
+}
+
+.sortbuttons {
+    background-color: rgb(255, 255, 158);
+    border-radius: 20px;
+    padding: 1em;
+    margin-bottom: 20em;
+    border: solid 3px #120faa;
+}
+
+.sortbuttons label {
+    padding: 1em
+}
+
+.selectassignments {
+    text-align: center;
+    background-color: rgb(255, 255, 158);
+    border-radius: 20px;
+    padding: 1em;
+    border: solid 3px #120faa;
+}
+
+.selectassignments ul {
+    text-align: left;
+    columns: 4
+}
+
+.selectassignments button {
+    margin: 2em
+}
+
+h3 {
+    padding-bottom: 1em
 }

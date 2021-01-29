@@ -31,7 +31,9 @@ img {
 .header {
     height: 220px;
     background-color: white;
-    text-align: center
+    text-align: center;
+    -webkit-box-shadow: 1px 8px 17px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 8px 17px 6px rgba(0, 0, 0, 0.2);
 }
 
 .chartcomponent {
@@ -42,7 +44,9 @@ img {
     border: solid 4px #120faa;
     border-radius: 20px;
     text-align: center;
-    padding: 1em
+    padding: 1em;
+    -webkit-box-shadow: 16px 10px 15px -2px rgba(0, 0, 0, 0.19);
+    box-shadow: 16px 10px 15px -2px rgba(0, 0, 0, 0.19);
 }
 
 a {
@@ -158,6 +162,8 @@ button {
     padding: 1em;
     margin-bottom: 20em;
     border: solid 3px #120faa;
+    -webkit-box-shadow: 16px 10px 15px -2px rgba(0, 0, 0, 0.19);
+    box-shadow: 16px 10px 15px -2px rgba(0, 0, 0, 0.19);
 }
 
 .sortbuttons label {
@@ -170,6 +176,8 @@ button {
     border-radius: 20px;
     padding: 1em;
     border: solid 3px #120faa;
+    -webkit-box-shadow: 16px 10px 15px -2px rgba(0, 0, 0, 0.19);
+    box-shadow: 16px 10px 15px -2px rgba(0, 0, 0, 0.19);
 }
 
 .selectassignments ul {

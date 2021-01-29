@@ -20,6 +20,7 @@ h1 {
 h3{
     font-size: 20px;
     font-weight: 600;
+    padding-bottom: 0.5em
 }
 
 ul {
@@ -194,18 +195,14 @@ button {
     margin: 2em
 }
 
-h3 {
-    padding-bottom: 1em
-}
-
 select{
     font-size: 16px
 }
 
 .dropdown{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
-    padding: 1.5em
+    padding-bottom: 2em
 }
 
 .dropdown label{

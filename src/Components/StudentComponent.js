@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Nav from './Nav';
 import Header from './Header';
 import Chart from './Chart';
@@ -22,8 +22,8 @@ const StudentComponent = () => {
             <Nav pagename={pageName} />
             <Chart pagename={pageName} />
             <div className="menu">
-                <SortButtons />
                 <SelectAssignments />
+                <SortButtons />
             </div>
         </div>
     )

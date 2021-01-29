@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Header from './Header';
 import Nav from './Nav';
 import Chart from './Chart';
@@ -17,8 +17,8 @@ const Main = () => {
             <Nav />
             <Chart />
             <div className="menu">
-                <SortButtons />
                 <SelectAssignments />
+                <SortButtons />
             </div>
         </div>
     )

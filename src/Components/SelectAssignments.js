@@ -20,15 +20,10 @@ const SelectAssignments = () => {
         setStudents(newStudents)
     };
 
-    const selectNone = () => {
-        const newStudents = [...students];
-        newStudents[0].assignments.map(item => item.checked = false);
-        setStudents(newStudents)
-    };
-
     return (
         <div className="selectassignments">
             <h3>Selecteer welke opdrachten je in het staafdiagram wil tonen</h3>
+            <Dropdown />
             <ul>
                 {allAssignments.map((item, index) =>
                     <li key={index}>
@@ -39,9 +34,7 @@ const SelectAssignments = () => {
                             <span>{item.assignmentName.slice(17)}</span>}
                     </li>)}
             </ul>
-            <Dropdown />
             <button onClick={() => selectAll()}>Selecteer alle opdrachten</button>
-            <button onClick={() => selectNone()}>Wis hele selectie</button>
         </div>
     )
 };

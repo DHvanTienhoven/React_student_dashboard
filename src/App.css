@@ -157,7 +157,7 @@ button {
     display: flex;
     width: 75vw;
     margin: 0 auto;
-    justify-content: space-between;
+    justify-content: space-around;
     padding-top: 2em;
     padding-bottom: 3em
 }

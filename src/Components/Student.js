@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { SortContext } from './SortContext';
 import { StudentContext } from './StudentContext';
 
 
@@ -16,16 +15,6 @@ const Student = ({ student, pagename, index }) => {
         setStudents(newStudents)
     };
 
-    const [sort, setSort] = useContext(SortContext);
-
-    const setDefault = () => {
-        const newStudents = [...students]
-        newStudents[0].assignments.map(item => item.checked = true)
-        setStudents(newStudents)
-        setSort({ moeilijk: false, leuk: false })
-    };
-
-
     return (
         <li>
             {!pagename &&
@@ -33,7 +22,7 @@ const Student = ({ student, pagename, index }) => {
                     <input type="checkbox" id={student.name} checked={student.checked} onChange={() => selectStudent(index)} />
                     <span className="checkmark"></span>
                 </label>}
-            <Link to={url} onClick={() => setDefault()}> {student.name} </Link>
+            <Link to={url}> {student.name} </Link>
         </li>
     )
 };

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import Dropdown from './Dropdown';
 import { StudentContext } from './StudentContext';
 
 const SelectAssignments = () => {
@@ -38,8 +39,9 @@ const SelectAssignments = () => {
                             <span>{item.assignmentName.slice(17)}</span>}
                     </li>)}
             </ul>
+            <Dropdown />
             <button onClick={() => selectAll()}>Selecteer alle opdrachten</button>
-            <button onClick={() => selectNone()}>Selecteer geen opdrachten</button>
+            <button onClick={() => selectNone()}>Wis hele selectie</button>
         </div>
     )
 };

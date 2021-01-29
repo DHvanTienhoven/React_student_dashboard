@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { StudentContext } from './StudentContext'
+import { StudentContext } from './StudentContext';
 import Student from './Student'
 import { SortContext } from './SortContext';
 

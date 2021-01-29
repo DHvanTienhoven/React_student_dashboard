@@ -17,6 +17,11 @@ h1 {
     color: #4f8bc9;
 }
 
+h3{
+    font-size: 20px;
+    font-weight: 600;
+}
+
 ul {
     list-style: none;
     padding-inline-start: 0;
@@ -191,4 +196,18 @@ button {
 
 h3 {
     padding-bottom: 1em
+}
+
+select{
+    font-size: 18px
+}
+
+.dropdown{
+    font-size: 20px;
+    font-weight: 600;
+    padding: 1.5em
+}
+
+.dropdown label{
+    padding-right: 1em
 }

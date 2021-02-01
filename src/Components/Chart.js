@@ -59,9 +59,9 @@ const Chart = ({ pagename }) => {
     const [sort, setSort] = useContext(SortContext);
 
     const sortAssignments = array => {
-        if (sort.moeilijk === true) {
+        if (sort.moeilijk) {
             return array.sort((a, b) => b.moeilijk - a.moeilijk)
-        } if (sort.leuk === true) {
+        } if (sort.leuk) {
             return array.sort((a, b) => b.leuk - a.leuk)
         } else {
             return array

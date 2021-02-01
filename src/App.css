@@ -208,3 +208,63 @@ select{
 .dropdown label{
     padding-right: 1em
 }
+
+@media(max-width: 700px){
+    body{
+        font-size: 12px
+    }
+
+    h1{
+        font-size: 20px
+    }
+    h3{
+        font-size: 15px
+    }
+    img{
+        width: 75px;
+        padding: 1em;
+        padding-left: 0;
+    }
+    .header{
+        height: 110px;
+        width: 100%
+    }
+    .nav ul{
+        flex-wrap: wrap
+    }
+    .nav ul li{
+        margin: 1.2em
+    }
+
+    .selectassignments ul {
+        text-align: left;
+        columns: 2
+    }
+
+    .menu{
+        display: block
+    }
+
+    .dropdown{
+        font-size: 15px
+    }
+
+    select{
+        font-size: 14px;
+    }
+
+    .chartcomponent{
+        min-height: 120px
+    }
+    .selectassignments{
+        margin-bottom: 2em;
+    }
+
+    button{
+        font-size: 12px;
+    }
+    /* .checkmark{
+        height: 18px;
+        width: 18px;
+    } */
+}

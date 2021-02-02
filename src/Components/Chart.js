@@ -1,5 +1,12 @@
 import React, { useContext } from 'react';
-import { VictoryBar, VictoryChart, VictoryGroup, VictoryLegend, VictoryLabel, VictoryAxis, VictoryLine } from 'victory';
+import { VictoryBar, 
+        VictoryChart, 
+        VictoryGroup, 
+        VictoryLegend, 
+        VictoryLabel, 
+        VictoryAxis, 
+        VictoryLine, 
+        VictoryTooltip } from 'victory';
 import { StudentContext } from './StudentContext';
 import { SortContext } from './SortContext';
 
@@ -70,7 +77,7 @@ const Chart = ({ pagename }) => {
 
     const sortedAssignments = sortAssignments(averageObjects);
 
-    const xyObject = () => {
+    const createxyObject = () => {
         const data = {};
         data.moeilijk = []
         data.leuk = []
@@ -81,7 +88,7 @@ const Chart = ({ pagename }) => {
         return data
     };
 
-    const data = xyObject();
+    const barData = createxyObject();
 
     const getConditiontalLabel = () =>{
         if (pagename){
@@ -97,104 +104,126 @@ const Chart = ({ pagename }) => {
         <div className = "chartcomponent">
             {filteredStudents.length > 0 && weighedAssignments.length > 0 &&
                 <VictoryChart
-                height={200}>
+                    height={200}>
                     <VictoryLine y={() => 1}
                         style={{
                             data: {
                                 stroke: "#bbbbbb",
                                 strokeWidth: 0.3
                             }
-                        }
-                        } />
+                        }} />
                     <VictoryLine y={() => 2}
                         style={{
                             data: {
                                 stroke: "#bbbbbb",
                                 strokeWidth: 0.3
                             }
-                        }
-                        } />
+                        }} />
                     <VictoryLine y={() => 3}
                         style={{
                             data: {
                                 stroke: "#bbbbbb",
                                 strokeWidth: 0.3
                             }
-                        }
-                        } />
+                        }} />
                     <VictoryLine y={() => 4}
                         style={{
                             data: {
                                 stroke: "#bbbbbb",
                                 strokeWidth: 0.3
                             }
-                        }
-                        } />
+                        }} />
                     <VictoryLine y={() => 5}
                         style={{
                             data: {
                                 stroke: "#bbbbbb",
                                 strokeWidth: 0.3
                             }
-                        }
-                        } />
+                        }} />
                     <VictoryLine y={() => 4.5}
                         style={{
                             data: {
                                 stroke: "#e8e8e8",
                                 strokeWidth: 0.3
                             }
-                        }
-                        } />
+                        }} />
                     <VictoryLine y={() => 0.5}
                         style={{
                             data: {
                                 stroke: "#e8e8e8",
                                 strokeWidth: 0.3
                             }
-                        }
-                        } />
+                        }} />
                     <VictoryLine y={() => 1.5}
                         style={{
                             data: {
                                 stroke: "#e8e8e8",
                                 strokeWidth: 0.3
                             }
-                        }
-                        } />
+                        }} />
                     <VictoryLine y={() => 2.5}
                         style={{
                             data: {
                                 stroke: "#e8e8e8",
                                 strokeWidth: 0.3
                             }
-                        }
-                        } />
+                        }} />
                     <VictoryLine y={() => 3.5}
                         style={{
                             data: {
                                 stroke: "#e8e8e8",
                                 strokeWidth: 0.3
                             }
-                        }
-                        } />
+                        }} />
                     <VictoryGroup offset={160 / weighedAssignments.length}>
                         <VictoryBar
-                            data={data.moeilijk}
+                            data={barData.moeilijk}
                             style={{ data: { fill: 'red' } }}
                             barWidth={130 / weighedAssignments.length}
                             animate={{
                                 duration: 1500,
                                 onLoad: { duration: 1000 }
-                            }} />
+                            }}
+                            labels={({ datum }) => `${datum.x} \n moeilijk-rating: ${datum.y.toString().slice(0,3)}` }
+                            labelComponent={<VictoryTooltip
+                                flyoutWidth={60}
+                                flyoutHeight={16}
+                                cornerRadius={2}
+                                pointerLength={4}
+                                pointerWidth={4}
+                                flyoutStyle={{
+                                    stroke: "#120faa",
+                                    strokeWidth: 1,
+                                    fill: "white"
+                                }}
+                                style={{ 
+                                    fontSize: 6, 
+                                    fill: "#4f8bc9"
+                                    }}/>} />
                         <VictoryBar
-                            data={data.leuk}
+                            data={barData.leuk}
                             style={{ data: { fill: 'gold' } }}
                             barWidth={130 / weighedAssignments.length}
                             animate={{
                                 duration: 1500,
                                 onLoad: { duration: 1000 }
-                            }} />
+                            }}
+                            labels={({ datum }) => `${datum.x} \n leuk-rating: ${datum.y.toString().slice(0,3)}` }
+                            labelComponent={<VictoryTooltip
+                                flyoutWidth={60}
+                                flyoutHeight={16}
+                                cornerRadius={2}
+                                pointerLength={4}
+                                pointerWidth={4}
+                                flyoutStyle={{
+                                    stroke: "#120faa",
+                                    strokeWidth: 1,
+                                    fill: "white"
+                                }}
+                                style={{ 
+                                    fontSize: 6, 
+                                    fill: "#4f8bc9"
+                                    }}/>} /> 
                     </VictoryGroup>
                     <VictoryAxis
                         tickLabelComponent={<VictoryLabel

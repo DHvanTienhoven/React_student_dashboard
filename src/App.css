@@ -250,7 +250,7 @@ select {
     }
     .chartcomponent {
         min-height: 120px;
-        padding: 0.5em;
+        padding-left: 2em;
         padding-top: 2em
     }
     .selectassignments {

@@ -92,9 +92,9 @@ const Chart = ({ pagename }) => {
 
     const getConditiontalLabel = () =>{
         if (pagename){
-            return "Rating"
+            return "Rating voor 'moeilijk' en 'leuk' per opdracht"
         } else{
-            return "Gemiddelde rating van geselecteerde studenten"
+            return "Gemiddelde rating voor 'moeilijk' en 'leuk' per opdracht"
         }
     }
 
@@ -104,7 +104,13 @@ const Chart = ({ pagename }) => {
         <div className = "chartcomponent">
             {filteredStudents.length > 0 && weighedAssignments.length > 0 &&
                 <VictoryChart
-                    height={200}>
+                    height={200}
+                    >
+                    <VictoryLabel 
+                        text={conditionalLabel} 
+                        x={225} 
+                        y={8} 
+                        textAnchor="middle"/>
                     <VictoryLine y={() => 1}
                         style={{
                             data: {
@@ -235,7 +241,7 @@ const Chart = ({ pagename }) => {
                         />}
                     />
                     <VictoryAxis dependentAxis
-                        label= {conditionalLabel}
+                        label= "Rating op een schaal van 1 tot 5"
                         domain={[0, 5]}
                         style={{
                             tickLabels:
@@ -247,7 +253,7 @@ const Chart = ({ pagename }) => {
                             }
                         }} />
                     <VictoryLegend
-                        x={150}
+                        x={185}
                         y = {30}
                         orientation="horizontal"
                         data={[

@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
-import { VictoryBar, 
-        VictoryChart, 
-        VictoryGroup, 
-        VictoryLegend, 
-        VictoryLabel, 
-        VictoryAxis, 
-        VictoryLine, 
-        VictoryTooltip } from 'victory';
+import {
+    VictoryBar,
+    VictoryChart,
+    VictoryGroup,
+    VictoryLegend,
+    VictoryLabel,
+    VictoryAxis,
+    VictoryLine,
+    VictoryTooltip
+} from 'victory';
 import { StudentContext } from './StudentContext';
 import { SortContext } from './SortContext';
 
@@ -90,10 +92,10 @@ const Chart = ({ pagename }) => {
 
     const barData = createxyObject();
 
-    const getConditiontalLabel = () =>{
-        if (pagename){
+    const getConditiontalLabel = () => {
+        if (pagename) {
             return "Rating voor 'moeilijk' en 'leuk' per opdracht"
-        } else{
+        } else {
             return "Gemiddelde rating voor 'moeilijk' en 'leuk' per opdracht"
         }
     }
@@ -101,17 +103,17 @@ const Chart = ({ pagename }) => {
     const conditionalLabel = getConditiontalLabel()
 
     return (
-        <div className = "chartcomponent">
+        <div className="chartcomponent">
             {filteredStudents.length > 0 && weighedAssignments.length > 0 &&
                 <VictoryChart
                     height={200}
-                    >
-                    <VictoryLabel 
-                        text={conditionalLabel} 
-                        x={225} 
-                        y={8} 
+                >
+                    <VictoryLabel
+                        text={conditionalLabel}
+                        x={225}
+                        y={8}
                         textAnchor="middle"
-                        style ={{fill:"#120faa"}}/>
+                        style={{ fill: "#120faa" }} />
                     <VictoryLine y={() => 1}
                         style={{
                             data: {
@@ -191,7 +193,7 @@ const Chart = ({ pagename }) => {
                                 duration: 1500,
                                 onLoad: { duration: 1000 }
                             }}
-                            labels={({ datum }) => `${datum.x} \n moeilijk-rating: ${datum.y.toString().slice(0,3)}` }
+                            labels={({ datum }) => `${datum.x} \n moeilijk-rating: ${datum.y.toString().slice(0, 3)}`}
                             labelComponent={<VictoryTooltip
                                 flyoutWidth={60}
                                 flyoutHeight={16}
@@ -203,10 +205,10 @@ const Chart = ({ pagename }) => {
                                     strokeWidth: 0.6,
                                     fill: "#ffffa0"
                                 }}
-                                style={{ 
-                                    fontSize: 6, 
+                                style={{
+                                    fontSize: 6,
                                     fill: "#120faa"
-                                    }}/>} />
+                                }} />} />
                         <VictoryBar
                             data={barData.leuk}
                             style={{ data: { fill: 'gold' } }}
@@ -215,7 +217,7 @@ const Chart = ({ pagename }) => {
                                 duration: 1500,
                                 onLoad: { duration: 1000 }
                             }}
-                            labels={({ datum }) => `${datum.x} \n leuk-rating: ${datum.y.toString().slice(0,3)}` }
+                            labels={({ datum }) => `${datum.x} \n leuk-rating: ${datum.y.toString().slice(0, 3)}`}
                             labelComponent={<VictoryTooltip
                                 flyoutWidth={60}
                                 flyoutHeight={16}
@@ -227,29 +229,32 @@ const Chart = ({ pagename }) => {
                                     strokeWidth: 0.6,
                                     fill: "#ffffa0"
                                 }}
-                                style={{ 
-                                    fontSize: 6, 
+                                style={{
+                                    fontSize: 6,
                                     fill: "#120faa"
-                                    }}/>} /> 
+                                }} />} />
                     </VictoryGroup>
                     <VictoryAxis
                         tickLabelComponent={<VictoryLabel
                             angle={-45}
                             dx={6}
                             dy={-9}
-                            style={{ 
+                            style={{
                                 fontSize: 5,
-                                fill: "#120faa" }}
+                                fill: "#120faa"
+                            }}
                             textAnchor={"end"}
                         />}
                     />
                     <VictoryAxis dependentAxis
-                        label= "Rating op een schaal van 1 tot 5"
+                        label="Rating op een schaal van 1 tot 5"
                         domain={[0, 5]}
                         style={{
                             tickLabels:
-                                { fontSize: 7,
-                                fill: "#120faa" },
+                            {
+                                fontSize: 7,
+                                fill: "#120faa"
+                            },
                             axisLabel:
                             {
                                 fontSize: 6,
@@ -259,7 +264,7 @@ const Chart = ({ pagename }) => {
                         }} />
                     <VictoryLegend
                         x={185}
-                        y = {30}
+                        y={30}
                         orientation="horizontal"
                         data={[
                             {
@@ -271,10 +276,13 @@ const Chart = ({ pagename }) => {
                                 symbol: { fill: 'gold' }
                             }]}
                         style={
-                            { labels: { 
-                                fontSize: 6,
-                                fill: "#120faa"} }
-                            
+                            {
+                                labels: {
+                                    fontSize: 6,
+                                    fill: "#120faa"
+                                }
+                            }
+
                         }
                     />
                 </VictoryChart>}

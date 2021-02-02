@@ -43,7 +43,7 @@ img {
 }
 
 .chartcomponent {
-    background-color: #eef4f8;
+    background-color:  #ffffff;
     width: 75vw;
     min-height: 300px;
     margin: 0 auto;
@@ -146,7 +146,7 @@ button {
     top: 5px;
     width: 5px;
     height: 10px;
-    border: solid#eef4f8;
+    border: solid white;
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -163,7 +163,7 @@ button {
 }
 
 .sortbuttons {
-    background-color: rgb(255, 255, 158);
+    background-color: #ffffa0;
     border-radius: 20px;
     padding: 1em;
     margin-bottom: 20em;
@@ -178,7 +178,7 @@ button {
 
 .selectassignments {
     text-align: center;
-    background-color: rgb(255, 255, 158);
+    background-color: #ffffa0;
     border-radius: 20px;
     padding: 1em;
     border: solid 3px #120faa;

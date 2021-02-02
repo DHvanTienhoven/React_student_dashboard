@@ -194,11 +194,11 @@ const Chart = ({ pagename }) => {
                                 flyoutStyle={{
                                     stroke: "#120faa",
                                     strokeWidth: 0.6,
-                                    fill: "white"
+                                    fill: "#ffffa0"
                                 }}
                                 style={{ 
                                     fontSize: 6, 
-                                    fill: "#4f8bc9"
+                                    fill: "#120faa"
                                     }}/>} />
                         <VictoryBar
                             data={barData.leuk}
@@ -218,11 +218,11 @@ const Chart = ({ pagename }) => {
                                 flyoutStyle={{
                                     stroke: "#120faa",
                                     strokeWidth: 0.6,
-                                    fill: "white"
+                                    fill: "#ffffa0"
                                 }}
                                 style={{ 
                                     fontSize: 6, 
-                                    fill: "#4f8bc9"
+                                    fill: "#120faa"
                                     }}/>} /> 
                     </VictoryGroup>
                     <VictoryAxis

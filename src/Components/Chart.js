@@ -110,7 +110,8 @@ const Chart = ({ pagename }) => {
                         text={conditionalLabel} 
                         x={225} 
                         y={8} 
-                        textAnchor="middle"/>
+                        textAnchor="middle"
+                        style ={{fill:"#120faa"}}/>
                     <VictoryLine y={() => 1}
                         style={{
                             data: {
@@ -236,7 +237,9 @@ const Chart = ({ pagename }) => {
                             angle={-45}
                             dx={6}
                             dy={-9}
-                            style={{ fontSize: 5 }}
+                            style={{ 
+                                fontSize: 5,
+                                fill: "#120faa" }}
                             textAnchor={"end"}
                         />}
                     />
@@ -245,11 +248,13 @@ const Chart = ({ pagename }) => {
                         domain={[0, 5]}
                         style={{
                             tickLabels:
-                                { fontSize: 7 },
+                                { fontSize: 7,
+                                fill: "#120faa" },
                             axisLabel:
                             {
                                 fontSize: 6,
-                                padding: 35
+                                padding: 35,
+                                fill: "#120faa"
                             }
                         }} />
                     <VictoryLegend
@@ -266,7 +271,9 @@ const Chart = ({ pagename }) => {
                                 symbol: { fill: 'gold' }
                             }]}
                         style={
-                            { labels: { fontSize: 6} }
+                            { labels: { 
+                                fontSize: 6,
+                                fill: "#120faa"} }
                             
                         }
                     />

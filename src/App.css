@@ -132,6 +132,10 @@ button {
     background-color: rgb(85, 177, 85);
 }
 
+.container:hover input:checked~.checkmark {
+    background-color: rgb(93, 192, 93);
+}
+
 .checkmark:after {
     content: "";
     position: absolute;

@@ -1,23 +1,22 @@
 import React, { useContext } from 'react';
+import { AssignmentContext } from './AssignmentContext';
 import Dropdown from './Dropdown';
-import { StudentContext } from './StudentContext';
+
 
 const SelectAssignments = () => {
 
-    const [students, setStudents] = useContext(StudentContext);
-
-    const allAssignments = students[0].assignments;
+    const [assignments, setAssignments] = useContext(AssignmentContext)
 
     const selectAssignment = index => {
-        const newStudents = [...students];
-        newStudents[0].assignments[index].checked = !newStudents[0].assignments[index].checked;
-        setStudents(newStudents)
+        const newAssignments = [...assignments];
+        newAssignments[index].checked = !newAssignments[index].checked;
+        setAssignments(newAssignments)
     };
 
     const selectAll = () => {
-        const newStudents = [...students];
-        newStudents[0].assignments.map(item => item.checked = true);
-        setStudents(newStudents)
+        const newAssignments = [...assignments];
+        newAssignments.map(item => item.checked = true);
+        setAssignments(newAssignments)
     };
 
     return (
@@ -25,7 +24,7 @@ const SelectAssignments = () => {
             <h3>Selecteer welke opdrachten je in het staafdiagram wil tonen</h3>
             <Dropdown />
             <ul>
-                {allAssignments.map((item, index) =>
+                {assignments.map((item, index) =>
                     <li key={index}>
                         <input type="checkbox" checked={item.checked} onChange={() => selectAssignment(index)} />
                         {item.assignmentName.length < 7 &&

@@ -1,28 +1,29 @@
 import React, { useContext } from 'react';
-import { StudentContext } from './StudentContext';
+import { AssignmentContext } from './AssignmentContext';
 
 const Dropdown = () => {
 
-    const [students, setStudents] = useContext(StudentContext);
-    const assignments = students[0].assignments.map(item => item.assignmentName)
+    const [assignments, setAssignments] = useContext(AssignmentContext)
+
+    const assignmentNames = assignments.map(item => item.assignmentName)
 
     const selectAssignment = e => {
         const index = e.target.value
         if (index !== "") {
-            const newStudents = [...students];
-            newStudents[0].assignments.map(item => item.checked = false);
-            newStudents[0].assignments[index].checked = true;
-            setStudents(newStudents)
+            const newAssignments = [...assignments];
+            newAssignments.map(item => item.checked = false);
+            newAssignments[index].checked = true;
+            setAssignments(newAssignments)
         }
     }
 
     return (
-        <div className = "dropdown">
+        <div className="dropdown">
             <label htmlFor="selectone">Kies één opdracht:  </label>
             <select name="select-assignment" id="selectone" onChange={e => selectAssignment(e)}>
                 <option value="">--Selecteer één opdracht--</option>
-                {assignments.map((item, index) => {
-                    return <option value={index} key ={index} >{item}</option>
+                {assignmentNames.map((item, index) => {
+                    return <option value={index} key={index} >{item}</option>
                 })}
             </select>
         </div>

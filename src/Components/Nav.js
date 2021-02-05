@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { StudentContext } from './StudentContext';
 import Student from './Student'
 import { SortContext } from './SortContext';
+import { AssignmentContext } from './AssignmentContext';
 
 
 const Nav = ({ pagename }) => {
@@ -17,12 +18,17 @@ const Nav = ({ pagename }) => {
 
     const [sort, setSort] = useContext(SortContext);
 
+    const [assignments, setAssignments] = useContext(AssignmentContext)
+
     const setDefault = () => {
         const newStudents = [...students]
         newStudents.map(item => item.checked = true)
-        newStudents[0].assignments.map(item => item.checked = true)
         setStudents(newStudents)
-        setSort({ moeilijk: false, leuk: false })
+        const newAssignments = [...assignments]
+        newAssignments.map(item => item.checked = true)
+        setAssignments(newAssignments)
+        setSort(prevState=>{
+            return {...prevState, moeilijk: false, leuk: false }})
     };
 
     return (

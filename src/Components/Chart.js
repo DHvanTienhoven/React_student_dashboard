@@ -11,6 +11,8 @@ import {
 } from 'victory';
 import { StudentContext } from './StudentContext';
 import { SortContext } from './SortContext';
+import { AssignmentContext } from './AssignmentContext';
+
 
 
 const Chart = ({ pagename }) => {
@@ -27,7 +29,9 @@ const Chart = ({ pagename }) => {
 
     const filteredStudents = filterStudents();
 
-    const weighedAssignments = students[0].assignments.filter(assignment => assignment.checked).map(item => item.assignmentName);
+    const [assignments, setAssignments] = useContext(AssignmentContext)
+
+    const weighedAssignments = assignments.filter(assignment => assignment.checked).map(item => item.assignmentName);
 
     const assembleAssignments = () => {
         const newArray = []

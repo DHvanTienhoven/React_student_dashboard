@@ -10,16 +10,24 @@ const SortButtons = () => {
     const sortAssignments = e => {
         switch (e.target.value) {
             case "sortstandard":
-                setSort({ moeilijk: false, leuk: false })
+                setSort(prevState => {
+                    return { ...prevState, moeilijk: false, leuk: false }
+                })
                 break;
             case "sortmoeilijk":
-                setSort({ moeilijk: true, leuk: false })
+                setSort(prevState => {
+                    return { ...prevState, moeilijk: true, leuk: false }
+                })
                 break;
             case "sortleuk":
-                setSort({ moeilijk: false, leuk: true })
+                setSort(prevState => {
+                    return { ...prevState, moeilijk: false, leuk: true }
+                })
                 break;
             default:
-                setSort({ moeilijk: false, leuk: false })
+                setSort(prevState => {
+                    return { ...prevState, moeilijk: false, leuk: false }
+                })
         }
     };
 

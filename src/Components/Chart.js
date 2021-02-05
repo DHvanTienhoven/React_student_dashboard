@@ -17,7 +17,7 @@ import { AssignmentContext } from './AssignmentContext';
 
 const Chart = ({ pagename }) => {
 
-    const [students, setStudents] = useContext(StudentContext)
+    const [students] = useContext(StudentContext)
 
     const filterStudents = () => {
         if (pagename) {
@@ -29,7 +29,7 @@ const Chart = ({ pagename }) => {
 
     const filteredStudents = filterStudents();
 
-    const [assignments, setAssignments] = useContext(AssignmentContext)
+    const [assignments] = useContext(AssignmentContext)
 
     const weighedAssignments = assignments.filter(assignment => assignment.checked).map(item => item.assignmentName);
 
@@ -69,7 +69,7 @@ const Chart = ({ pagename }) => {
 
     const averageObjects = createAverageObjects();
 
-    const [sort, setSort] = useContext(SortContext);
+    const [sort] = useContext(SortContext);
 
     const sortAssignments = array => {
         if (sort.moeilijk) {

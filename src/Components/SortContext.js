@@ -5,10 +5,10 @@ export const SortContext = createContext();
 
 export const SortProvider = props => {
 
-    const [sorting, setSorting] = useState({ moeilijk: false, leuk: false })
+    const [sort, setSort] = useState({ moeilijk: false, leuk: false })
 
     return (
-        <SortContext.Provider value={[sorting, setSorting]}>
+        <SortContext.Provider value={[sort, setSort]}>
             {props.children}
         </SortContext.Provider>
     )

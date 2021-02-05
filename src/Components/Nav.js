@@ -16,7 +16,7 @@ const Nav = ({ pagename }) => {
         setStudents(newStudents)
     };
 
-    const [sort, setSort] = useContext(SortContext);
+    const [, setSort] = useContext(SortContext);
 
     const [assignments, setAssignments] = useContext(AssignmentContext)
 

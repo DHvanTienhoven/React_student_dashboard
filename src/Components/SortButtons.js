@@ -5,7 +5,7 @@ import { SortContext } from './SortContext';
 
 const SortButtons = () => {
 
-    const [sort, setSort] = useContext(SortContext);
+    const [, setSort] = useContext(SortContext);
 
     const sortAssignments = e => {
         switch (e.target.value) {

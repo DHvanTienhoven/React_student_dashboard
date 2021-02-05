@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from'./img/winclogo.png';
 
+
 const Header = ({ pagename }) => {
     return (
         <div className = "header">

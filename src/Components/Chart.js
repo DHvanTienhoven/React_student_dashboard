@@ -14,7 +14,6 @@ import { SortContext } from './SortContext';
 import { AssignmentContext } from './AssignmentContext';
 
 
-
 const Chart = ({ pagename }) => {
 
     const [students] = useContext(StudentContext)

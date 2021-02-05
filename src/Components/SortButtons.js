@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { SortContext } from './SortContext';
 
 
-
 const SortButtons = () => {
 
     const [, setSort] = useContext(SortContext);

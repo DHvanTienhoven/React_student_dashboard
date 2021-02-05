@@ -37,7 +37,7 @@ const SortButtons = () => {
             <ul>
                 <li>
                     <input type="radio" id="standard"
-                        name="sortchoice" value="sortstandard" defaultChecked onChange={(e) => sortAssignments(e)} />
+                        name="sortchoice" value="sortstandard" onChange={(e) => sortAssignments(e)} />
                     <label htmlFor="standard" >Sorteer op opdrachtvolgorde</label>
                 </li>
                 <li>

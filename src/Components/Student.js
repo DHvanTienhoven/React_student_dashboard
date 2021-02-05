@@ -7,7 +7,7 @@ const Student = ({ student, pagename, index }) => {
 
     const [students, setStudents] = useContext(StudentContext);
 
-    const url = `/Student/?name=${student.name}`;
+    const url = `/Student/${student.name}`;
 
     const selectStudent = index => {
         const newStudents = [...students]

@@ -19,11 +19,8 @@ const Chart = ({ pagename }) => {
     const [students] = useContext(StudentContext)
 
     const filterStudents = () => {
-        if (pagename) {
-            return students.filter(student => student.name === pagename)
-        } else {
-            return students.filter(student => student.checked)
-        }
+        return pagename ? students.filter(student => student.name === pagename):
+            students.filter(student => student.checked)
     };
 
     const filteredStudents = filterStudents();
@@ -96,11 +93,8 @@ const Chart = ({ pagename }) => {
     const barData = createxyObject();
 
     const getConditiontalLabel = () => {
-        if (pagename) {
-            return "Rating voor 'moeilijk' en 'leuk' per opdracht"
-        } else {
-            return "Gemiddelde rating voor 'moeilijk' en 'leuk' per opdracht"
-        }
+        return pagename ? "Rating voor 'moeilijk' en 'leuk' per opdracht" :
+            "Gemiddelde rating voor 'moeilijk' en 'leuk' per opdracht"
     }
 
     const conditionalLabel = getConditiontalLabel()
